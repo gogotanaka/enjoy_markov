@@ -2,4 +2,9 @@
 
 require 'enjoy_markov'
 
-EnjoyMarkov.start!
+range, speed = 20, 0.05
+
+speed = ARGV[ARGV.index('-s') + 1].to_f if ARGV.include?('-s')
+range = ARGV[ARGV.index('-r') + 1].to_i if ARGV.include?('-r')
+
+EnjoyMarkov.start!(range, speed)

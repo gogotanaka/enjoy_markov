@@ -1,13 +1,14 @@
 class EnjoyMarkov
   class << self
-    def start!(supinf=20)
+    def start!(supinf, speed)
       @@x = 0
       loop do
         @@x += [-1, 1].sample # TODO: use prefer randmGen
-        raise 'ops.. ;(' if supinf == @@x.abs
+        break if supinf == @@x.abs
         puts "#{wall}#{space * supinf}#{axis}#{space * supinf}#{wall}".tap { |s| s[@@x + supinf + 1] = point }
-        sleep 0.05
+        sleep speed
       end
+      puts 'Ops... ;('
     end
 
     private
