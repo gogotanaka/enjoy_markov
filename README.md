@@ -6,3 +6,8 @@
 
     $ gem install enjoy_markov
     $ enjoy_markov
+
+## License
+Copyright (c) 2014 gogotanaka
+
+MIT License
